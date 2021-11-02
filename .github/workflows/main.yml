@@ -1,4 +1,4 @@
-name: CI
+name: Claim diamonds
 
 on:
   schedule:
