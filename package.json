@@ -1,0 +1,14 @@
+{
+  "name": "coinmarketcap-daily-diamonds",
+  "version": "1.0.0",
+  "description": "Cron job to claim daily diamonds on CoinMarketCap",
+  "main": "index.js",
+  "private": "true",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "puppeteer": "^10.4.0"
+  }
+}
