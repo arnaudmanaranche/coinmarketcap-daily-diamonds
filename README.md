@@ -1,6 +1,6 @@
 # CoinMarketCap Daily Diamonds
 
-Puppeteer script running in a Github action to claim daily diamonds on [CoinMarketCap](https://coinmarketcap.com/)
+Puppeteer script running in a Github action to claim daily diamonds on [CoinMarketCap](https://coinmarketcap.com/).
 
 ## How to run (locally)
 
