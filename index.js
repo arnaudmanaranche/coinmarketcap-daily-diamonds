@@ -1,15 +1,14 @@
 require("dotenv").config();
 
 const puppeteer = require("puppeteer");
+const userAgent = require("user-agents");
 
 (async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
   await page.setViewport({ width: 1920, height: 1080 });
-  await page.setUserAgent(
-    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
-  );
+  await page.setUserAgent(userAgent.toString());
 
   // Visit URL
   await page.goto("https://coinmarketcap.com/");
@@ -36,10 +35,16 @@ const puppeteer = require("puppeteer");
     await page.keyboard.press("Enter");
   }
 
+  // Wait login call is finished
+  await page.waitForTimeout(2000);
+
   await page.goto("https://coinmarketcap.com/account/my-diamonds/");
 
-  // TODO
-  // Add instructions for clicking on claim button
+  // Click on claim diamonds button
+  const [claimDiamondsButton] = await page.$x(
+    "/html/body/div[1]/div/div/div[2]/div/div/div/div[2]/div/div[2]/div[2]/div[1]/button"
+  );
+  await claimDiamondsButton.click();
 
   await browser.close();
 })();
