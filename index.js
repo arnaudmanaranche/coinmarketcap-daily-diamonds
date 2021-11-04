@@ -47,6 +47,8 @@ const userAgent = require("user-agents");
 
   if (claimDiamondsButton) {
     await claimDiamondsButton.click();
+  } else {
+    console.log("Collect button not found");
   }
 
   await browser.close();
