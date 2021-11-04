@@ -44,6 +44,8 @@ const userAgent = require("user-agents");
   const [claimDiamondsButton] = await page.$x(
     "/html/body/div[1]/div/div/div[2]/div/div/div/div[2]/div/div[2]/div[2]/div[1]/button"
   );
+  // @debug
+  console.log(claimDiamondsButton);
   await claimDiamondsButton.click();
 
   await browser.close();
