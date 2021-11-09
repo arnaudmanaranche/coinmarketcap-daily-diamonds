@@ -46,14 +46,10 @@ puppeteer.use(StealthPlugin());
 
   // Click on claim diamonds button
   const [claimDiamondsButton] = await page.$x(
-    "//button[contains(., 'Collect Diamonds')]"
+    "/html/body/div[1]/div/div/div[2]/div/div/div/div[2]/div/div[2]/div[2]/div[1]/button"
   );
-
-  if (claimDiamondsButton) {
-    await claimDiamondsButton.click();
-  } else {
-    console.log("Collect button not found");
-  }
+  await claimDiamondsButton.click();
+  await page.waitForTimeout(5000);
 
   await browser.close();
 })();
